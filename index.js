@@ -9,7 +9,7 @@ const { chromium } = require('playwright-chromium');
   const browser = await chromium.launch({headless: false});
   const page = await browser.newPage();
 
-  const url = 'https://www.hl7.org/fhir/encounter-examples.html';
+  const url = 'https://www.hl7.org/fhir/practitioner-examples.html';
   const name = url.split('/')[4].replace('.html', '');
 
   await page.goto(url);
@@ -27,7 +27,7 @@ const { chromium } = require('playwright-chromium');
     console.log(exampleUrl);
     fs.mkdirSync(path.resolve(__dirname, 'data', name), { recursive: true });
     fs.writeFileSync(path.resolve(__dirname, 'data', name, `${exampleUrl}.json`), json)
-    await delay(400);
+    await delay(500);
   }
 
   // await browser.close();
