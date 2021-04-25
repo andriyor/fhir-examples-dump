@@ -9,7 +9,7 @@ const { chromium } = require('playwright-chromium');
   const browser = await chromium.launch({headless: false});
   const page = await browser.newPage();
 
-  const url = 'https://www.hl7.org/fhir/servicerequest-examples.html';
+  const url = 'https://www.hl7.org/fhir/practitionerrole-examples.html';
   const name = url.split('/')[4].replace('.html', '');
 
   await page.goto(url);
